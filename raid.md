@@ -1,8 +1,6 @@
 `mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sdc7 /dev/sdc8`
 
-\`cat /proc/mdstats
-
-\`
+`cat /proc/mdstats`
 
 `mdadm -D /dev/md0`
 
@@ -14,11 +12,11 @@
 
 `grep tag4 /etc/fstab`
 
-`/dev/vg9/tesetvol /home/tag4 ext defaluts 0 1  #trägt den device in den verzeichnissbaum`
+`/dev/vg9/tesetvol /home/tag4 ext defaluts 0 1 `trägt den device in den verzeichnissbaum
 
-`# 0 für keine logs`
+0 für keine logs
 
-`# 1 für nacht dem crash checken erst nach system vol`
+1 für nacht dem crash checken erst nach system vol
 
 `mount -a`
 
@@ -30,69 +28,37 @@
 
 `lvdisplay /dev/vg0/testvol  #sollte vergrösserte Vol zeigen`
 
-`df -h /home/tag4`
-
-`  
+`df -h /home/tag4  
 `
 
 `resize2fs /dev/vg0/testvol`
 
-`  
-`
 
-`  
-`
 
-`  
-`
-
-## SPIEGEL ERSTELLEN
+### Spiegel erstellen
 
 Raid 2 aus sdc5 & 6
 
 `mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sdc5 /dev/sdc6`
 
-`#Check`
+Check
 
-`cat /proc/mdstat`
-
-`  
-`
-
-`# in vol rein packen`
-
-`  
-`
+`cat /proc/mdstat ` in vol rein packe
 
 `vgextend vg9 /dev/md1`
 
-`  
-`
+Kopieren
 
-`#copy`
+`dd ....`
 
-`dd`
-
-`  
-`
-
-`# rausschmeißen`
-
+rausschmeißen  
 `vgreduce vg0 &dev/md0`
 
-`  
-`
 
-`###`
 
-`### Snapshots`
+### Snapshots
 
-`###`
-
-`  
-`
-
-`vgs #status abfrage`
+`vgs` status abfrage
 
 `lvcreate -L +50M`
 
@@ -102,15 +68,9 @@ Raid 2 aus sdc5 & 6
 
 `ls /home/tag4/kartoffel`
 
-`  
-`
-
 `unount /home/tag4`
 
-`  
-`
+`lvchange -a n /dev/vg0/testsnap `\#unmount \#war vorher schon gemountet
 
-`lvchange -a n /dev/vg0/testsnap #unmount #war vorher schon gemountet`
-
-`lvchange -a y /dev/vg0/testsnap #mount`
+`lvchange -a y /dev/vg0/testsnap `\#mount
 
