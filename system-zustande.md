@@ -1,28 +1,24 @@
 # Systemzustände
 
-runlevel     \_\_\_Anzeige des Runlevels \_\_\_
+`runlevel`     Anzeige des Runlevels 
 
-init &lt;runlevel&gt;     Ändern des runlevels
+`init runlevel`     Ändern des runlevels
 
-0         Rechner ausschalten
-
+>0         Rechner ausschalten
 1         Single Usermode \(console\)
-
 3        Multiuser + Netzwerk
+5        % XServer
+6      Rechner rebooten
 
-5         % XServer
+`/etc/inittab`     Definitieon des Default runlevels
 
-6         Rechner rebooten
+`/etc/init.d`    enthält skripte für dienste
 
-/etc/inittab     Definitieon des Default runlevels
+`chk config -l ssh`     zeigt an, welchen Runleveln ssh gestartet wird
 
-/etc/init.d    enthält skripte für dienste
+`* ssh`     ssh dienst wird dem aktuellen Runlevel hinzugefügt
 
-chk config -l ssh     zeigt an, welchen Runleveln ssh gestartet wird
+`rcssh start/stop/status`     service steuerung
 
-* ssh     ssh dienst wird dem aktuellen Runlevel hinzugefügt
-
-rcssh start/stop/status     service steuerung
-
-service statrt/stop/status     das gleiche unter debian
+`service statrt/stop/status`     das gleiche unter debian
 
