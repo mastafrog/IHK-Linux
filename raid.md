@@ -1,3 +1,5 @@
+## Filesystem Raid
+
 `mdadm --create /dev/md0 --raid-devices=2 --level=1 /dev/sdc7 /dev/sdc8`
 
 `cat /proc/mdstats`
@@ -12,7 +14,7 @@
 
 `grep tag4 /etc/fstab`
 
-`/dev/vg9/tesetvol /home/tag4 ext defaluts 0 1 `trägt den device in den verzeichnissbaum
+`/dev/vg9/tesetvol /home/tag4 ext defaluts 0 1`trägt den device in den verzeichnissbaum
 
 0 für keine logs
 
@@ -28,14 +30,13 @@
 
 `lvdisplay /dev/vg0/testvol  #sollte vergrösserte Vol zeigen`
 
-`df -h /home/tag4  
-`
+`df -h /home/tag4`
 
 `resize2fs /dev/vg0/testvol`
 
+#### 
 
-
-### Spiegel erstellen
+#### Spiegel erstellen
 
 Raid 2 aus sdc5 & 6
 
@@ -43,7 +44,7 @@ Raid 2 aus sdc5 & 6
 
 Check
 
-`cat /proc/mdstat ` in vol rein packe
+`cat /proc/mdstat` in vol rein packe
 
 `vgextend vg9 /dev/md1`
 
@@ -54,9 +55,9 @@ Kopieren
 rausschmeißen  
 `vgreduce vg0 &dev/md0`
 
+#### 
 
-
-### Snapshots
+#### Snapshots
 
 `vgs` status abfrage
 
@@ -70,7 +71,7 @@ rausschmeißen
 
 `unount /home/tag4`
 
-`lvchange -a n /dev/vg0/testsnap `\#unmount \#war vorher schon gemountet
+`lvchange -a n /dev/vg0/testsnap`\#unmount \#war vorher schon gemountet
 
-`lvchange -a y /dev/vg0/testsnap `\#mount
+`lvchange -a y /dev/vg0/testsnap`\#mount
 
