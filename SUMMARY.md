@@ -6,4 +6,5 @@
 * [System Zustände](system-zustande.md)
 * [Systemmeldungen](systemmeldungen.md)
 * [Crontabs](crontabs.md)
+* [rsync](rsync.md)
 
