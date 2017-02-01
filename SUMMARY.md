@@ -7,4 +7,5 @@
 * [Systemmeldungen](systemmeldungen.md)
 * [Crontabs](crontabs.md)
 * [rsync](rsync.md)
+* [Netzwerk](netzwerk.md)
 
