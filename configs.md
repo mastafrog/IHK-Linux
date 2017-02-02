@@ -21,4 +21,4 @@ ssh -X -L 13389: windowshost:3389 -l userAufTunnelServer
 
 
 Notebook --ssh--> tunnel server --> Zielserver:port
-<------------- ssh map on local port --------------
+< ------------- ssh map on local port --------------
