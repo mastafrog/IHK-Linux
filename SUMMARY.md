@@ -9,4 +9,5 @@
 * [rsync](rsync.md)
 * [Netzwerk](netzwerk.md)
 * [SSH](ssh.md)
+* [Configs](configs.md)
 
